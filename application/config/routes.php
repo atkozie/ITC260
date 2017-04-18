@@ -56,5 +56,15 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 */
 
+/* ---previous modification:
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
+*/
+
+// user entry on left, control parameter on right:
+
+$route['news/(:any)'] = 'news/view/$1';
+// if user types news with nothing else, just go to the news controller
+$route['news'] = 'news';
+$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'pages/view';
